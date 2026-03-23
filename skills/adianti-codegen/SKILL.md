@@ -173,3 +173,12 @@ class <Nome>Form extends TPage
     // Métodos obrigatórios: onEdit, onClear
 }
 ```
+
+---
+
+## Processo de Finalização
+
+Após a geração das telas (List & Form), você **DEVE obrigatoriamente** realizar o registro de permissões no banco de dados e no menu do sistema seguindo a **Skill: `adianti-permission`**.
+
+1. Gere os inserts SQL para `system_program` e `system_group_program`.
+2. Adicione a entrada no `menu.xml` (geralmente apenas para a tela `List`).
