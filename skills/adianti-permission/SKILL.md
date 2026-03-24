@@ -1,3 +1,11 @@
+---
+name: adianti-permission
+description: >
+  Registra permissões e menu para novas telas no Adianti Framework usando Migrations e menu.xml.
+  Use quando o usuário pedir para registrar tela, adicionar permissão, configurar menu, ou após criar uma nova tela.
+  TRIGGER: registrar tela, permissão, menu, menu.xml, migration de permissão, Adianti.
+---
+
 # Skill: Registro de Permissões e Menu (Adianti Framework)
 
 Esta skill fornece os procedimentos para registrar uma nova tela nos sistemas baseados no Adianti Framework, utilizando o novo sistema de **Migrations** para o banco de dados e atualização manual do `menu.xml`.

@@ -1,3 +1,11 @@
+---
+name: adianti-codegen
+description: >
+  Cria telas List.php e Form.php para o Adianti Framework seguindo os padrões do projeto Solubiz.
+  Use quando o usuário pedir para criar telas, views, ou arquivos de consulta/cadastro para uma Model.
+  TRIGGER: criar tela, List.php, Form.php, view, consulta, cadastro, Adianti, gerador de tela.
+---
+
 # Skill: Gerador de Telas Adianti Framework (List & Form)
 
 Esta skill fornece diretrizes e templates para a criação de telas de consulta (`List.php`) e cadastro (`Form.php`) utilizando o Adianti Framework, seguindo os padrões do projeto Solubiz/GContabil.
