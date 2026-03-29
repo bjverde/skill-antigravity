@@ -1,56 +1,77 @@
 ---
 name: Adianti Skill Factory
 description: >
-  Fábrica de Skills para automatizar a criação de novos playbooks de IA
-  seguindo os padrões do Adianti Framework e FormDin.
+  Fábrica de automação para criar novas IA skills seguindo rigidamente
+  os padrões do Adianti Framework e FormDin.
 ---
 
-# 🏭 Adianti Skill Factory (Meta-Skill)
+# 🏭 Adianti Skill Factory (V2 - Pro)
 
-Esta skill guia o agente na criação de **novas skills** de forma padronizada, garantindo que todo novo conhecimento adicionado ao projeto seja consistente, determinístico e fácil de usar tanto por humanos quanto por outras IAs.
+Esta meta-skill guia o Agente na criação de novos módulos de inteligência para o projeto, utilizando diretrizes de alta performance em documentação e engenharia de prompts.
+
+## 🎯 Objetivo
+Transformar novos conhecimentos técnicos em playbooks determinísticos que a IA possa seguir sem ambiguidade.
+
+---
 
 ## 🛠️ Procedimento Interno para o Agente (IA)
 
-Ao ser ativada (via gatilhos como "criar nova skill"), a IA **deve** seguir rigorosamente estes passos:
+Ao iniciar uma "fabricação", você deve seguir rigorosamente estes passos, consultando sempre o **`@documentation-specialist`** para o acabamento final.
 
 ### 1. Entrevista de Requisitos
 Solicite ao usuário:
-- **Nome da Skill**: (Ex: `adianti-boleto`)
-- **Objetivo Primário**: (Ex: `Gerar classes de boleto usando a biblioteca X`)
-- **Gatilhos (Triggers)**: (Palavras-chave que ativam a skill)
+- **`Nome da Skill`**: (Ex: `adianti-boletos`)
+- **`Propósito`**: O que ela resolve?
+- **`Gatilhos`**: Palavras-chave exclusivas para ativação.
 
-### 2. Estrutura do `SKILL.md`
-A IA deve propor um rascunho de `SKILL.md` contendo as seguintes seções obrigatórias:
+### 2. Protótipo Genérico de `SKILL.md` (A seguir)
+O novo arquivo deve seguir esta estrutura básica:
 
-*   **Frontmatter YAML**: Com nome, triggers e descrição clara.
-*   **Título Principal**: `# Skill: <Nome Completo>`
-*   **Padrões e Regras**: Detalhamento técnico específico do Adianti/FormDin.
-*   **Template / Exemplo**: Blocos de código comentados.
-*   **Checklist de Validação**: Passos para confirmar se a skill foi aplicada corretamente.
+```markdown
+---
+name: <Nome Exibição>
+description: <Breve resumo de 1 linha>
+---
+# Skill: <Nome Completo>
 
-### 3. Polimento e Refinamento (Agent Chaining)
-Após gerar o conteúdo técnico inicial do Adianti, a IA **deve** realizar um "refinamento de qualidade" consultando as diretrizes dos seguintes especialistas globais:
-1.  **Agente `@documentation-specialist`**: Use-o para revisar a clareza do tom de voz e a estrutura organizacional.
-2.  **Skill `@doc-coauthoring`**: Use-a para validar a sintaxe Markdown e do YAML frontmatter.
+> [!NOTE]
+> Breve introdução sobre o contexto da skill no Adianti/FormDin.
 
-### 4. Hierarquia de Arquivos
-A fábrica deve criar a seguinte estrutura na pasta `.agent/skills/<nome-da-skill>/`:
-- `SKILL.md`: O arquivo mestre.
-- `scripts/`: (Opcional) Pasta para scripts auxiliares.
-- `examples/`: (Opcional) Pasta para arquivos de exemplo.
+## 📐 Padrões Técnicos
+| Regra | Detalhamento |
+| :--- | :--- |
+| Ex: DB | Usar sempre Constantes::DATABASE_MAIN |
+
+## 🚀 Como Executar
+Passos claros para o humano ou para a própria IA.
+
+## 🏁 Checklist de Conclusão
+- [ ] O código gerado segue os padrões X?
+- [ ] Foram incluídos os registros de permissão?
+```
+
+### 3. Controle de Qualidade (Scannability)
+Antes de finalizar, valide o conteúdo com estes princípios:
+- **Tabelas primeiro**: Use tabelas para regras e configurações.
+- **Alertas Úteis**: Use `> [!IMPORTANT]` para regras que não podem ser violadas e `> [!TIP]` para sugestões.
+- **Paths Clicáveis**: SEMPRE use links no formato caminhos relativos para arquivos mencionados.
+
+### 4. Ciclo de Polimento (Agent Chaining)
+1.  **Geração**: Crie o rascunho técnico inicial.
+2.  **Revisão Estética**: Peça ao `@documentation-specialist` para melhorar a clareza.
+3.  **Validação de Sintaxe**: Peça ao `@doc-coauthoring` para validar o YAML e o Markdown.
 
 ---
 
-## 💡 Dicas de Fabricação
+## 💾 Integração Git (Repositório `skill-antigravity`)
+Ao concluir uma nova skill, lembre-se:
+1.  Criar a nova pasta em `.agent/skills/<nova-skill>/`.
+2.  Adicionar a nova skill à tabela no principal [README.md](../../.agent/README.md).
+3.  Sugerir ao usuário o **Commit** no repositório de skills.
 
-1. **Keep it Concise**: Evite descrições longas; prefira links para arquivos e tabelas.
-2. **Context Aware**: Sempre vincule a nova skill ao ecossistema Adianti/FormDin.
-3. **Trigger Words**: Certifique-se de que os gatilhos no YAML são específicos o suficiente para não causar falsos positivos.
+> [!IMPORTANT]
+> Nunca sobrescreva uma skill existente sem perguntar antes. Sempre crie a nova pasta separadamente.
 
-## 🚀 Como Iniciar uma Fabricação?
-Basta me pedir:
-- *"Use a adianti-skill-factory para criar a skill [Nome]"*
-- *"Quero criar um novo playbook para [Assunto]"*
-
-> [!TIP]
-> **Automação de Registro**: Após criar a skill, a fábrica deve sugerir a atualização do `README.md` principal para incluir a nova ferramenta na tabela de Skills Locais.
+---
+## 🚀 Como Iniciar?
+Diga apenas: *"Use a adianti-skill-factory para [Assunto]"*.
