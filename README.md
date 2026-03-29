@@ -1,4 +1,4 @@
-# Antigravity Skills & Kit - Guia do Projeto Solubiz
+# Antigravity Skills & Kit - Guia do Projeto
 
 Este repositório contém as **Skills e Configurações** especializadas para o ecossistema Antigravity (IA), focadas principalmente no **Adianti Framework**, **FormDin v4** e **FormDin v5**.
 
@@ -77,7 +77,7 @@ npx antigravity-awesome-skills --path ./.agent/skills
 
 Para evitar o versionamento de milhares de arquivos genéricos no seu repositório principal e no repositório de skills, siga estas regras:
 
-1.  **Na Raiz do Projeto (`.gitignore`):** Deve conter a linha `.agent/` (isso já está configurado no projeto Solubiz).
+1.  **Na Raiz do Projeto (`.gitignore`):** Deve conter a linha `.agent/` (isso já está configurado no projeto).
 2.  **Na Pasta `.agent/` (`.agent/.gitignore`):** Ignoramos as skills externas/genéricas instaladas via Awesome Skills para manter o foco apenas nas skills Adianti.
 
 ---
@@ -131,7 +131,7 @@ Crie sua própria "fábrica de skills" para acelerar o desenvolvimento. Exemplo 
 
 # 🛠️ Ferramentas Especializadas do Projeto
 
-Estas são as ferramentas desenvolvidas especificamente para o workflow da Solubiz/Adianti. Elas estão localizadas na pasta `.agent/`.
+Estas são as ferramentas desenvolvidas especificamente para o workflow da Adianti/FormDin. Elas estão localizadas na pasta `.agent/`.
 
 ## 🧠 Skills Locais (`.agent/skills/`)
 
@@ -139,7 +139,7 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 
 | Nome | Descrição | Quando usar |
 | :--- | :--- | :--- |
-| [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão Solubiz. | Ao precisar criar uma nova tela de cadastro ou consulta. |
+| [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão. | Ao precisar criar uma nova tela de cadastro ou consulta. |
 | [**adianti-permission**](skills/adianti-permission/SKILL.md) | Automação de Migrations de permissão e Menu.xml. | Após criar novas telas para registrar o acesso. |
 | [**adianti_persistence**](skills/adianti_persistence/SKILL.md) | Guia mestre de TRecord e persistência Adianti. | Ao criar ou depurar Models e persistência de dados. |
 | [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
