@@ -21,13 +21,23 @@ Abaixo um resumo de como instalar o Antigravity e as skills:
 
 O **Antigravity Kit** fornece agentes especialistas (Frontend, Backend, etc.) e workflows estruturados para a IA.
 
-**Instalação Global:**
+**Instalação Global (NPM):**
+Esse processo de instalar exige que você tenha o Node.js instalado. Se não tem ou não quer instalar, pule para a instalação manual.
+
 ```bash
 npm install -g @vudovn/ag-kit
 ```
 
+**Instalação Manual (Sem Node.js):**
+Caso você não possua o Node.js instalado, você pode instalar as definições manualmente:
+1. Acesse o repositório: [vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
+2. Baixe o código (ZIP) ou clone o repositório em uma pasta temporária.
+3. Copie as pastas `agents/`, `skills/`, `workflows/` e `rules/` para a sua pasta global de configuração do Antigravity:
+   - **Windows:** `C:\Users\<Seu_Usuario>\.gemini\antigravity\`
+   - *Nota: Crie a pasta caso ela não exista.*
+
 **Como Iniciar no Projeto:**
-Acesse a pasta raiz do seu projeto e execute:
+Acesse a pasta raiz do seu projeto e execute o comando abaixo (ou copie as 4 pastas mencionadas acima para dentro da pasta `.agent/` do seu projeto):
 ```bash
 ag-kit init
 ```
