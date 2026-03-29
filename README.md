@@ -129,4 +129,34 @@ Crie sua própria "fábrica de skills" para acelerar o desenvolvimento. Exemplo 
 
 ---
 
+# 🛠️ Ferramentas Especializadas do Projeto
+
+Estas são as ferramentas desenvolvidas especificamente para o workflow da Solubiz/Adianti. Elas estão localizadas na pasta `.agent/`.
+
+## 🧠 Skills Locais (`.agent/skills/`)
+
+As skills definem o "conhecimento especializado" da IA sobre o projeto.
+
+| Nome | Descrição | Quando usar |
+| :--- | :--- | :--- |
+| [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão Solubiz. | Ao precisar criar uma nova tela de cadastro ou consulta. |
+| [**adianti-permission**](skills/adianti-permission/SKILL.md) | Automação de Migrations de permissão e Menu.xml. | Após criar novas telas para registrar o acesso. |
+| [**adianti_persistence**](skills/adianti_persistence/SKILL.md) | Guia mestre de TRecord e persistência Adianti. | Ao criar ou depurar Models e persistência de dados. |
+| [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
+| [**pdf_to_markdown**](skills/pdf_to_markdown/SKILL.md) | Extrator de PDFs para formato Markdown. | Para ler manuais técnicos (ex: Adianti) e transformá-los em conhecimento. |
+
+## 🔄 Workflows Locais (`.agent/workflows/`)
+
+Workflows são sequências de passos que guiam a IA em tarefas complexas.
+
+*   [**`/pdf2md`**](workflows/pdf2md.md): Converte um arquivo PDF (manual ou livro) em um documento Markdown legível pela IA.
+
+> [!TIP]
+> **Fluxo de Trabalho Sugerido:** 
+> 1. Use `adianti-codegen` para criar a tela. 
+> 2. Use `adianti-permission` para registrar a tela no sistema. 
+> 3. Se precisar consultar o manual do Adianti, use o workflow `/pdf2md`.
+
+---
+
 *Documentação atualizada por Antigravity em 29/03/2026.*
