@@ -82,7 +82,7 @@ Para evitar o versionamento de milhares de arquivos genéricos no seu repositór
 
 ---
 
-# Dicas de Skills e Agentes
+# Dicas de Agentes, Skills, Rules e Workflows de projetos externos
 
 ## Antigravity Kit
 O Antigravity Kit transforma a IA em uma "equipe virtual" através de agentes especialistas. Aqui estão alguns dos principais incluídos no kit:
