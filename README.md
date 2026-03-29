@@ -1,9 +1,19 @@
 # Antigravity Skills & Kit - Guia do Projeto Solubiz
 
-Este repositório contém as **Skills e Configurações** especializadas para o ecossistema Antigravity (IA), focadas principalmente no **Adianti Framework** e nas regras de negócio da Solubiz.
+Este repositório contém as **Skills e Configurações** especializadas para o ecossistema Antigravity (IA), focadas principalmente no **Adianti Framework**, **FormDin v4** e **FormDin v5**.
 
-Este projeto deve ser clonado dentro da pasta raiz do seu projeto Adianti para que a IA (Antigravity ou Claude Code) reconheça as instruções.
+Este projeto deve ser clonado dentro da pasta raiz do seu projeto Adianti ou FormDin para que a IA (Antigravity ou Claude Code) reconheça as instruções. Em conjunto será utilizao o Antigravity Kit e algumas skill do Awesome Skills.
 
+# Instalação resumida
+Abaixo um resumo de como instalar o Antigravity e as skills:
+
+1. Tenha o Antigravity instalado
+1. Clone o seu projeto Adianti/FormDin
+1. Usando o Antigravity abra o seu projeto
+1. No terminal dentro do Antigravity, clone esse projeto skill-antigravity
+1. Instalar o Antigravity Kit Globalmente
+
+# Instalação detalhada 
 ---
 
 ## 1. Instalação do Antigravity Kit (Global)
