@@ -28,20 +28,18 @@ Esse processo de instalar exige que você tenha o Node.js instalado. Se não tem
 npm install -g @vudovn/ag-kit
 ```
 
-**Instalação Manual (Sem Node.js):**
-Caso você não possua o Node.js instalado, você pode instalar as definições manualmente:
-1. Acesse o repositório: [vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
-2. Baixe o código (ZIP) ou clone o repositório em uma pasta temporária.
-3. Copie as pastas `agents/`, `skills/`, `workflows/` e `rules/` para a sua pasta global de configuração do Antigravity:
-   - **Windows:** `C:\Users\<Seu_Usuario>\.gemini\antigravity\`
-   - *Nota: Crie a pasta caso ela não exista.*
+**Instalação Global Determinística (Sem Node.js):**
+Siga os passos abaixo para instalar o kit globalmente usando o script Python deste projeto:
+1. Abra o terminal na pasta raiz do projeto.
+2. Execute o comando da skill:
+   ```bash
+   python .agent/skills/ag-kit-installer/scripts/install_ag_kit.py
+   ```
+   *O script irá baixar o repositório oficial e organizar as pastas `agents/`, `skills/`, `workflows/` e `rules/` automaticamente na sua pasta global `%USERPROFILE%\.gemini\antigravity\`.*
 
 **Como Iniciar no Projeto:**
-Acesse a pasta raiz do seu projeto e execute o comando abaixo (ou copie as 4 pastas mencionadas acima para dentro da pasta `.agent/` do seu projeto):
-```bash
-ag-kit init
-```
-*Isso irá configurar os agentes e regras básicas no seu ambiente.*
+Após a instalação global, os Agentes estarão disponíveis em qualquer lugar. Se desejar atalhos específicos (slash commands `/`) dentro deste projeto:
+- Copie as 4 pastas globais acima para dentro da pasta `.agent/` do seu projeto.
 
 ---
 
