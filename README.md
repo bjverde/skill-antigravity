@@ -142,6 +142,7 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 | [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão. | Ao precisar criar uma nova tela de cadastro ou consulta. |
 | [**adianti-permission**](skills/adianti-permission/SKILL.md) | Automação de Migrations de permissão e Menu.xml. | Após criar novas telas para registrar o acesso. |
 | [**adianti_persistence**](skills/adianti_persistence/SKILL.md) | Guia mestre de TRecord e persistência Adianti. | Ao criar ou depurar Models e persistência de dados. |
+| [**adianti-skill-factory**](skills/adianti-skill-factory/SKILL.md) | Fábrica de automação para criar novas IA skills. | Para criar novos playbooks ou diretrizes para a IA. |
 | [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
 | [**pdf_to_markdown**](skills/pdf_to_markdown/SKILL.md) | Extrator de PDFs para formato Markdown. | Para ler manuais técnicos (ex: Adianti) e transformá-los em conhecimento. |
 
