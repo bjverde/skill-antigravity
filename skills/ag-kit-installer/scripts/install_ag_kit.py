@@ -10,6 +10,15 @@ def install_ag_kit():
     dest_base = home_dir / ".gemini" / "antigravity"
     temp_clone_dir = Path("./temp_ag_kit_clone")
 
+def handle_remove_readonly(func, path, exc):
+    """Lida com arquivos somente-leitura no Windows ao remover pastas (solução comum para .git)."""
+    import stat
+    if not os.access(path, os.W_OK):
+        os.chmod(path, stat.S_IWUSR)
+        func(path)
+    else:
+        raise
+
     print(f"[*] Iniciando instalação do Antigravity Kit...")
     print(f"[*] Destino Global: {dest_base}")
 
@@ -18,7 +27,7 @@ def install_ag_kit():
 
     # 2. Clonar o repositório
     if temp_clone_dir.exists():
-        shutil.rmtree(temp_clone_dir)
+        shutil.rmtree(temp_clone_dir, onerror=handle_remove_readonly)
 
     try:
         print(f"[*] Clonando repositório de {repo_url}...")
@@ -31,21 +40,21 @@ def install_ag_kit():
     folders_to_copy = ["agents", "skills", "workflows", "rules"]
 
     for folder in folders_to_copy:
-        src_folder = temp_clone_dir / folder
+        src_folder = temp_clone_dir / ".agent" / folder
         dest_folder = dest_base / folder
 
         if src_folder.exists():
             print(f"[*] Copiando {folder} para {dest_folder}...")
             # Se a pasta já existir no destino, removemos para garantir limpeza (ou mesclamos se preferível)
             if dest_folder.exists():
-                shutil.rmtree(dest_folder)
+                shutil.rmtree(dest_folder, onerror=handle_remove_readonly)
             shutil.copytree(src_folder, dest_folder)
         else:
             print(f"[!] Aviso: Pasta '{folder}' não encontrada no repositório.")
 
     # 4. Limpeza
     print(f"[*] Limpando arquivos temporários...")
-    shutil.rmtree(temp_clone_dir)
+    shutil.rmtree(temp_clone_dir, onerror=handle_remove_readonly)
 
     print("\n[✔] Instalação concluída com sucesso!")
     print(f"Agentes e Skills agora estão ativos em: {dest_base}")
