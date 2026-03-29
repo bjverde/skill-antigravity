@@ -12,6 +12,7 @@ Abaixo um resumo de como instalar o Antigravity e as skills:
 1. Usando o Antigravity abra o seu projeto
 1. No terminal dentro do Antigravity, clone esse projeto skill-antigravity
 1. Instalar o Antigravity Kit Globalmente
+1. Instalar o Awesome Skills localmente, somentes as recomendadas ou que for pertinente para o seu projeto. ***🚫NÃO instale todas as skills do Awesome Skills, pois são milhares e vai deixar o Antigravity lento. 🐌***
 
 # Instalação detalhada 
 ---
@@ -49,6 +50,9 @@ git clone https://github.com/bjverde/skill-antigravity.git .agent
 ## 3. Integração com Awesome Skills
 
 O repositório **Awesome Skills** contém milhares de utilitários genéricos. Você pode instalá-los junto com as skills do Adianti.
+
+***🚫NÃO instale todas as skills do Awesome Skills, pois são milhares e vai deixar o Antigravity lento. 🐌***
+
 
 **Como Instalar Skills Utilitárias (Ex: Security, Debug):**
 ```bash
