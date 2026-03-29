@@ -2,7 +2,7 @@
 
 Este repositório contém as **Skills e Configurações** especializadas para o ecossistema Antigravity (IA), focadas principalmente no **Adianti Framework**, **FormDin v4** e **FormDin v5**.
 
-Este projeto deve ser clonado dentro da pasta raiz do seu projeto Adianti ou FormDin para que a IA (Antigravity ou Claude Code) reconheça as instruções. Em conjunto será utilizao o Antigravity Kit e algumas skill do Awesome Skills.
+Este projeto deve ser clonado dentro da pasta raiz do seu projeto Adianti/FormDin para que a IA (Antigravity ou Claude Code) reconheça as instruções facilitando o desenvolvimento. Em conjunto será utilizado o Antigravity Kit (Global), algumas skill do Awesome Skills (local) e GSD (Global).
 
 # Instalação resumida
 Abaixo um resumo de como instalar o Antigravity e as skills:
@@ -59,7 +59,7 @@ Foi criada a skill `ag-kit-installer` para instalar o Antigravity kit globalment
 
 ---
 
-## 3. Integração com Awesome Skills
+## 3. Instalação do Awesome Skills (local)
 
 O repositório **Awesome Skills** contém milhares de utilitários genéricos. Você pode instalá-los junto com as skills do Adianti.
 
@@ -82,21 +82,48 @@ Para evitar o versionamento de milhares de arquivos genéricos no seu repositór
 
 ---
 
-## 5. Dicas de Skills e Agentes
+# Dicas de Skills e Agentes
 
-### 1. Stack Adianti (PHP/Web/DB)
+## Antigravity Kit
+O Antigravity Kit transforma a IA em uma "equipe virtual" através de agentes especialistas. Aqui estão alguns dos principais incluídos no kit:
+
+🛠️ Engenharia e Desenvolvimento
+* @backend-specialist: Focado em lógica de servidor, APIs e arquitetura de sistemas.
+* @frontend-specialist: Especialista em UI/UX, CSS moderno, JavaScript e frameworks web.
+* @debugger: Um agente focado exclusivamente em análise sistemática de logs e correção de erros.
+* @database-architect: Especialista em modelagem de dados relacional e otimização de queries SQL.
+
+🛡️ Qualidade e Segurança
+* @security-auditor: Analisa o código em busca de vulnerabilidades como SQL Injection e falhas de autenticação.
+* @test-engineer: Ajuda a criar planos de teste, testes unitários e automação de QA.
+
+📋 Planejamento e Documentação
+* @product-planner: Auxilia no brainstorming de funcionalidades e na criação de MVPs (utiliza o comando /brainstorm).
+* @documentation-specialist: Ideal para manter o README atualizado ou criar novas skills (utiliza o comando /doc).
+
+🚀 Outras Especialidades
+* @devops-engineer: Focado em deploys, CI/CD e configurações de servidor (como o Wamp64/Apache).
+* @seo-growth: Especialista em otimização para motores de busca e estratégias de crescimento.
+
+### Como utilizá-los?
+Você não precisa chamar um por um manualmente na maioria das vezes. Quando você inicia um workflow (como o /create ou /debug), o Antigravity automaticamente seleciona o "especialista" mais adequado para aquela tarefa.
+
+Dica para seu projeto: Como você trabalha muito com PHP e Adianti, o @backend-specialist e o @database-architect serão seus parceiros mais frequentes!
+
+
+## 1. Stack Adianti (PHP/Web/DB)
 Utilize estas skills genéricas (do Awesome Skills) para complementar as do projeto:
 - `@debugging-strategies` (Estratégias de depuração PHP)
 - `@api-design-principles` (Design de APIs RestService)
 - `sql-injection-testing` (Segurança em consultas SQL)
 - `@security-auditor` (Auditoria de segurança de código)
 
-### 2. Meta-Skill: "Criar Skills com Facilidade"
+## 2. Meta-Skill: "Criar Skills com Facilidade"
 Para criar novas automatizações rapidamente, utilize o playbook de documentação:
 - **`@doc-coauthoring`**: Ajuda a converter notas de código em um arquivo `SKILL.md` estruturado.
 - **Agente `Documentation Specialist`**: Use-o para gerar a estrutura YAML e as instruções de novas skills.
 
-### 3. Recomendação de Configuração (Skill Factory)
+## 3. Recomendação de Configuração (Skill Factory)
 Crie sua própria "fábrica de skills" para acelerar o desenvolvimento. Exemplo de uso:
 *"Use a skill-factory para criar uma nova skill que automatize o padrão de [Alguma Função do Adianti]"*.
 
