@@ -4,13 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-def install_ag_kit():
-    repo_url = "https://github.com/vudovn/antigravity-kit.git"
-    home_dir = Path.home()
-    dest_base = home_dir / ".gemini" / "antigravity"
-    temp_clone_dir = Path("./temp_ag_kit_clone")
-
-def handle_remove_readonly(func, path, exc):
+def handle_remove_readonly(func, path, excinfo):
     """Lida com arquivos somente-leitura no Windows ao remover pastas (solução comum para .git)."""
     import stat
     if not os.access(path, os.W_OK):
@@ -18,6 +12,12 @@ def handle_remove_readonly(func, path, exc):
         func(path)
     else:
         raise
+
+def install_ag_kit():
+    repo_url = "https://github.com/vudovn/antigravity-kit.git"
+    home_dir = Path.home()
+    dest_base = home_dir / ".gemini" / "antigravity"
+    temp_clone_dir = Path("./temp_ag_kit_clone")
 
     print(f"[*] Iniciando instalação do Antigravity Kit...")
     print(f"[*] Destino Global: {dest_base}")
@@ -45,7 +45,7 @@ def handle_remove_readonly(func, path, exc):
 
         if src_folder.exists():
             print(f"[*] Copiando {folder} para {dest_folder}...")
-            # Se a pasta já existir no destino, removemos para garantir limpeza (ou mesclamos se preferível)
+            # Se a pasta já existir no destino, removemos para garantir limpeza
             if dest_folder.exists():
                 shutil.rmtree(dest_folder, onerror=handle_remove_readonly)
             shutil.copytree(src_folder, dest_folder)
@@ -56,9 +56,9 @@ def handle_remove_readonly(func, path, exc):
     print(f"[*] Limpando arquivos temporários...")
     shutil.rmtree(temp_clone_dir, onerror=handle_remove_readonly)
 
-    print("\n[✔] Instalação concluída com sucesso!")
-    print(f"Agentes e Skills agora estão ativos em: {dest_base}")
-    print("Você pode usar comandos como '/brainstorm' ou agentes como '@frontend-specialist' globalmente.")
+    print("\n[OK] Instalacao concluida com sucesso!")
+    print(f"Agentes e Skills agora estao ativos em: {dest_base}")
+    print("Voce pode usar comandos como '/brainstorm' ou agentes como '@frontend-specialist' globalmente.")
 
 if __name__ == "__main__":
     install_ag_kit()
