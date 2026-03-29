@@ -22,24 +22,22 @@ Solicite ao usuário:
 ### 2. Estrutura do `SKILL.md`
 A IA deve propor um rascunho de `SKILL.md` contendo as seguintes seções obrigatórias:
 
-*   **Frontmatter YAML**: 
-    ```yaml
-    ---
-    name: <Nome Exibição>
-    description: <Breve resumo de 1 linha>
-    ---
-    ```
-*   **Título Principal**: (Ex: `# Skill: <Nome Completo>`)
-*   **Seção "Padrões e Regras"**: Onde são documentados os "segredos" técnicos (ex: `DB Main`, `Not Null`, `Soft Delete`).
-*   **Seção "Template / Exemplo"**: Blocos de código comentados seguindo o estilo do projeto.
-*   **Seção "Fluxo de Uso"**: Passos 1, 2, 3 para o usuário ou agente.
-*   **Alerta de Segurança/Importante**: Usar `> [!IMPORTANT]` ou `> [!CAUTION]`.
+*   **Frontmatter YAML**: Com nome, triggers e descrição clara.
+*   **Título Principal**: `# Skill: <Nome Completo>`
+*   **Padrões e Regras**: Detalhamento técnico específico do Adianti/FormDin.
+*   **Template / Exemplo**: Blocos de código comentados.
+*   **Checklist de Validação**: Passos para confirmar se a skill foi aplicada corretamente.
 
-### 3. Hierarquia de Arquivos
+### 3. Polimento e Refinamento (Agent Chaining)
+Após gerar o conteúdo técnico inicial do Adianti, a IA **deve** realizar um "refinamento de qualidade" consultando as diretrizes dos seguintes especialistas globais:
+1.  **Agente `@documentation-specialist`**: Use-o para revisar a clareza do tom de voz e a estrutura organizacional.
+2.  **Skill `@doc-coauthoring`**: Use-a para validar a sintaxe Markdown e do YAML frontmatter.
+
+### 4. Hierarquia de Arquivos
 A fábrica deve criar a seguinte estrutura na pasta `.agent/skills/<nome-da-skill>/`:
 - `SKILL.md`: O arquivo mestre.
-- `scripts/`: (Opcional) Pasta para scripts auxiliares (Python, PHP CLI).
-- `examples/`: (Opcional) Pasta para arquivos de exemplo completos.
+- `scripts/`: (Opcional) Pasta para scripts auxiliares.
+- `examples/`: (Opcional) Pasta para arquivos de exemplo.
 
 ---
 
