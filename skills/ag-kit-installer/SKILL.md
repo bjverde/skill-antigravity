@@ -27,11 +27,15 @@ Ao ser invocada, a IA deve seguir este fluxo lógico:
 3.  **ETAPA 3: Instalação via PowerShell (Fallback)**
     - Caso o Python falhe, execute a seguinte sequência de comandos no Windows (PowerShell):
     ```powershell
+    if (Test-Path "./temp_ag_kit_clone") { Remove-Item -Path "./temp_ag_kit_clone" -Recurse -Force }
     git clone --depth 1 https://github.com/vudovn/antigravity-kit.git ./temp_ag_kit_clone
-    New-Item -ItemType Directory -Force -Path "$HOME\.gemini\antigravity"
+    $source = "./temp_ag_kit_clone/.agent"
+    $dest = "$HOME\.gemini\antigravity"
+    New-Item -ItemType Directory -Force -Path $dest
     foreach ($folder in "agents", "skills", "workflows", "rules") {
-        if (Test-Path "./temp_ag_kit_clone/$folder") {
-            Copy-Item -Path "./temp_ag_kit_clone/$folder" -Destination "$HOME\.gemini\antigravity\$folder" -Recurse -Force
+        if (Test-Path "$source\$folder") {
+            if (Test-Path "$dest\$folder") { Remove-Item -Path "$dest\$folder" -Recurse -Force }
+            Copy-Item -Path "$source\$folder" -Destination $dest -Recurse -Force
         }
     }
     Remove-Item -Path "./temp_ag_kit_clone" -Recurse -Force
