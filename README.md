@@ -57,30 +57,12 @@ Foi criada a skill `ag-kit-installer` para instalar o Antigravity kit globalment
    *O script irá baixar o repositório oficial e organizar as pastas `agents/`, `skills/`, `workflows/` e `rules/` automaticamente na sua pasta global `%USERPROFILE%\.gemini\antigravity\`.*
 1. Vericando se a instalação foi bem sucedida, feche o Antigravity e abra novamente. Abra o toogle de agents do Antigravity e chame @documentation-specialist e veja se ele responde. Se sim, a instalação foi bem sucedida.
 
----
 
-## 3. Instalação do Awesome Skills (local)
+## 3. Awesome Skills localmente
 
-O repositório **Awesome Skills** contém milhares de utilitários genéricos. Você pode instalá-los junto com as skills do Adianti.
+Instalar o Awesome Skills localmente, somentes as recomendadas ou que for pertinente para o seu projeto. ***🚫NÃO instale todas as skills do Awesome Skills, pois são milhares e vai deixar o Antigravity lento. 🐌***
 
-***🚫NÃO instale todas as skills do Awesome Skills, pois são milhares e vai deixar o Antigravity lento. 🐌***
-
-
-**Como Instalar Skills Utilitárias (Ex: Security, Debug):**
-```bash
-npx antigravity-awesome-skills --path ./.agent/skills
-```
-
----
-
-## 4. Configuração do Git e Exclusão
-
-Para evitar o versionamento de milhares de arquivos genéricos no seu repositório principal e no repositório de skills, siga estas regras:
-
-1.  **Na Raiz do Projeto (`.gitignore`):** Deve conter a linha `.agent/` (isso já está configurado no projeto).
-2.  **Na Pasta `.agent/` (`.agent/.gitignore`):** Ignoramos as skills externas/genéricas instaladas via Awesome Skills para manter o foco apenas nas skills Adianti.
-
----
+**DESATIVADO POR ENQUANTO, estava duplicado com o Antigravity Kit**
 
 # Dicas de Agentes, Skills, Rules e Workflows de projetos externos
 
