@@ -17,26 +17,3 @@
 # Outros arquivos temporários
 .DS_Store
 Thumbs.db
-
-# External/Generic Skills to Ignore:
-@debugging-strategies
-debugging-strategies
-@api-design-principles
-api-design-principles
-sql-injection-testing
-@security-auditor
-security-auditor
-@doc-coauthoring
-doc-coauthoring
-@brainstorming
-brainstorming
-@architecture
-architecture
-@test-driven-development
-test-driven-development
-@lint-and-validate
-lint-and-validate
-@create-pr
-create-pr
-@frontend-design
-frontend-design
