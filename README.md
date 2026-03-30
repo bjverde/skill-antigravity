@@ -26,6 +26,9 @@ Abaixo um resumo de como instalar o Antigravity e as skills:
 ## 1. Instalação das Skills para Adianti/FormDin de forma local
 
 Para garantir que a IA conheça as regras do Adianti/FormDin, as skills devem estar na pasta `.agent`.
+* url: https://github.com/vudovn/antigravity-kit
+* web App Example - Step-by-step guide to creating a web application
+* Online Docs - Browse all documentation online
 
 **Como Clonar Localmente:**
 Acesse a pasta raiz do seu projeto e execute:
@@ -113,8 +116,9 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 | Nome | Descrição | Quando usar |
 | :--- | :--- | :--- |
 | [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão. | Ao precisar criar uma nova tela de cadastro ou consulta. |
-| [**adianti-permission**](skills/adianti-permission/SKILL.md) | Automação de Migrations de permissão e Menu.xml. | Após criar novas telas para registrar o acesso. |
-| [**adianti_persistence**](skills/adianti_persistence/SKILL.md) | Guia mestre de TRecord e persistência Adianti. | Ao criar ou depurar Models e persistência de dados. |
+| [**adianti-migration**](skills/adianti-migration/SKILL.md) | Motor de criação de Migrations PHP (V00x...). | Para versionar mudanças de banco de dados. |
+| [**adianti-menuxml**](skills/adianti-menuxml/SKILL.md) | Registro de novas entradas no `system/menu.xml`. | Para tornar uma tela acessível na interface. |
+| [**adianti-permission**](skills/adianti-permission/SKILL.md) | Repositório de comandos SQL de permissão. | Fonte de dados para Migrations e Menu. |
 | [**adianti-skill-factory**](skills/adianti-skill-factory/SKILL.md) | Fábrica de automação para criar novas IA skills. | Para criar novos playbooks ou diretrizes para a IA. |
 | [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
 | [**pdf_to_markdown**](skills/pdf_to_markdown/SKILL.md) | Extrator de PDFs para formato Markdown. | Para ler manuais técnicos (ex: Adianti) e transformá-los em conhecimento. |
