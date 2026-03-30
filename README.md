@@ -118,15 +118,6 @@ Utilize estas skills genéricas (do Awesome Skills) para complementar as do proj
 - `sql-injection-testing` (Segurança em consultas SQL)
 - `@security-auditor` (Auditoria de segurança de código)
 
-## 2. Meta-Skill: "Criar Skills com Facilidade"
-Para criar novas automatizações rapidamente, utilize o playbook de documentação:
-- **`@doc-coauthoring`**: Ajuda a converter notas de código em um arquivo `SKILL.md` estruturado.
-- **Agente `Documentation Specialist`**: Use-o para gerar a estrutura YAML e as instruções de novas skills.
-
-## 3. Recomendação de Configuração (Skill Factory)
-Crie sua própria "fábrica de skills" para acelerar o desenvolvimento. Exemplo de uso:
-*"Use a skill-factory para criar uma nova skill que automatize o padrão de [Alguma Função do Adianti]"*.
-
 ---
 
 # 🛠️ Ferramentas Especializadas do Projeto
