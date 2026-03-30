@@ -14,6 +14,7 @@ Esta skill é a base de dados de comandos SQL necessária para registrar novas f
 | :--- | :--- | :--- |
 | `<NomeAmigável>` | Nome legível que aparecerá no Menu. | "Cadastro de Produtos" |
 | `<NomeClasse>` | Nome EXATO da classe PHP (`Case Sensitive`). | "ProdutoForm" |
+| `<ID_GRUPO>` | ID do grupo de permissão (Default: `1` para ADM). | `1` ou `2` |
 
 ---
 
@@ -27,11 +28,11 @@ INSERT INTO system_program (id, name, controller)
 VALUES ( (SELECT max(p.id) + 1 FROM system_program p), '<NomeAmigável>', '<NomeClasse>' );
 ```
 
-### 2. Vincular ao Grupo Administrador (`system_group_program`)
+### 2. Vincular ao Grupo (`system_group_program`)
 ```sql
 INSERT INTO system_group_program (id, system_group_id, system_program_id)
 VALUES ( (SELECT max(gp.id) + 1 FROM system_group_program gp)
-       , 1 -- Grupo ADM
+       , <ID_GRUPO> -- ID do Grupo (1 = ADM)
        , (SELECT p.id FROM system_program p WHERE p.controller = '<NomeClasse>')
        );
 ```
@@ -52,6 +53,10 @@ Antes de aplicar este SQL em uma Migration, a IA deve validar:
 - [ ] O nome da classe (`controller`) existe no diretório `app/control/`.
 - [ ] O arquivo `VXXX.php` usa o banco `'permission'` para estas queries.
 - [ ] A subquery de `max(id) + 1` foi incluída para evitar conflitos.
+- [ ] **Confirmação de Grupo**: Confirmar qual o `<ID_GRUPO>` correto (Padrão: 1 para Administrador).
+
+### 🔍 Dica: Como listar grupos?
+Para ver os grupos cadastrados, use: `SELECT id, name FROM system_group;`
 
 > [!CAUTION]
 > **IDs Seqüenciais**: NUNCA use IDs fixos (ex: `VALUES (151, ...)`) — isto quebrará o sistema em diferentes bases de dados. Sempre use as subqueries de `MAX(id)`.
