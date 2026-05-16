@@ -18,7 +18,7 @@ Esta skill fornece diretrizes e templates para a criação de telas de consulta 
 - **Tipos de Campo Padrão**:
     - **Texto/Geral**: `TEntry`
     - **Chaves Estrangeiras (FK)**: `TDBCombo`
-    - **Datas**: `TDate` ou `TDateTime` (conforme o tipo no banco)
+    - **Datas**: `TDate` ou `TDateTime`. Para filtros em telas `List.php`, utilize obrigatoriamente o padrão de intervalo (De/Até) da skill **`adianti-list-daterange`**.
 - **Validação de Obrigatoriedade**: Sempre verificar se o campo no banco de dados é `NOT NULL`. Se for, aplicar `$field->addValidation("Label", new TRequiredValidator());`.
 - **Metadados de Registro**: Incluir obrigatoriamente os arquivos `include_info_registro_*.php` para manter a rastreabilidade (usuário de criação/alteração e datas).
 
