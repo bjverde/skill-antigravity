@@ -19,6 +19,7 @@ Esta skill fornece diretrizes e templates para a criação de telas de consulta 
     - **Texto/Geral**: `TEntry`
     - **Chaves Estrangeiras (FK)**: `TDBCombo`
     - **Datas**: `TDate` ou `TDateTime`. Para filtros em telas `List.php`, utilize obrigatoriamente o padrão de intervalo (De/Até) da skill **`adianti-list-daterange`**.
+- **Colunas da Grid**: Para a criação de colunas no Datagrid, utilize obrigatoriamente as definições de ordenação e formatação da skill **`adianti-list-column`**.
 - **Validação de Obrigatoriedade**: Sempre verificar se o campo no banco de dados é `NOT NULL`. Se for, aplicar `$field->addValidation("Label", new TRequiredValidator());`.
 - **Metadados de Registro**: Incluir obrigatoriamente os arquivos `include_info_registro_*.php` para manter a rastreabilidade (usuário de criação/alteração e datas).
 
@@ -72,9 +73,9 @@ class <Nome>List extends TPage
         $this->datagrid->datatable = 'true';
         $this->datagrid->setHeight(Constantes::GRID_HEIGHT);
 
-        // Colunas
-        // $col = new TDataGridColumn('field', 'Label', 'left');
-        // $this->datagrid->addColumn($col);
+        // Colunas (Seguir padrões da skill adianti-list-column)
+        // Exemplo: $column = new TDataGridColumn('field', 'Label', 'left');
+        // $this->datagrid->addColumn($column);
 
         require_once 'include_info_registro_grid.php';
 

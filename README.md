@@ -117,6 +117,7 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 | :--- | :--- | :--- |
 | [**adianti-codegen**](skills/adianti-codegen/SKILL.md) | Gerador de telas List e Form seguindo o padrão. | Ao precisar criar uma nova tela de cadastro ou consulta. |
 | [**adianti-list-daterange**](skills/adianti-list-daterange/SKILL.md) | Padroniza filtros de intervalo de data (De/Até) em listagens. | Ao implementar filtros de busca por período em telas List.php. |
+| [**adianti-list-column**](skills/adianti-list-column/SKILL.md) | Padroniza colunas (ordenação e datas) em datagrids. | Ao definir ou ajustar colunas em telas de listagem. |
 | [**adianti-migration**](skills/adianti-migration/SKILL.md) | Motor de criação de Migrations PHP (V00x...). | Para versionar mudanças de banco de dados. |
 | [**adianti-menuxml**](skills/adianti-menuxml/SKILL.md) | Registro de novas entradas no `system/menu.xml`. | Para tornar uma tela acessível na interface. |
 | [**adianti-permission**](skills/adianti-permission/SKILL.md) | Repositório de comandos SQL de permissão. | Fonte de dados para Migrations e Menu. |
