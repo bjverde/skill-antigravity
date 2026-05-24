@@ -121,6 +121,7 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 | [**adianti-migration**](skills/adianti-migration/SKILL.md) | Motor de criação de Migrations PHP (V00x...). | Para versionar mudanças de banco de dados. |
 | [**adianti-menuxml**](skills/adianti-menuxml/SKILL.md) | Registro de novas entradas no `system/menu.xml`. | Para tornar uma tela acessível na interface. |
 | [**adianti-permission**](skills/adianti-permission/SKILL.md) | Repositório de comandos SQL de permissão. | Fonte de dados para Migrations e Menu. |
+| [**adianti-rest**](skills/adianti-rest/SKILL.md) | Guia para criação de serviços REST, RESTful e JWT. | Ao implementar ou consumir Web Services com ou sem segurança JWT. |
 | [**adianti-skill-factory**](skills/adianti-skill-factory/SKILL.md) | Fábrica de automação para criar novas IA skills. | Para criar novos playbooks ou diretrizes para a IA. |
 | [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
 | [**pdf_to_markdown**](skills/pdf_to_markdown/SKILL.md) | Extrator de PDFs para formato Markdown. | Para ler manuais técnicos (ex: Adianti) e transformá-los em conhecimento. |
