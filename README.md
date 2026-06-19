@@ -125,6 +125,14 @@ As skills definem o "conhecimento especializado" da IA sobre o projeto.
 | [**adianti-skill-factory**](skills/adianti-skill-factory/SKILL.md) | Fábrica de automação para criar novas IA skills. | Para criar novos playbooks ou diretrizes para a IA. |
 | [**ag-kit-installer**](skills/ag-kit-installer/SKILL.md) | Instalador do Antigravity Kit (via Python/PowerShell). | Na configuração inicial de uma nova máquina. |
 | [**pdf_to_markdown**](skills/pdf_to_markdown/SKILL.md) | Extrator de PDFs para formato Markdown. | Para ler manuais técnicos (ex: Adianti) e transformá-los em conhecimento. |
+| [**formdin-migration-adianti**](skills/formdin-migration-adianti/SKILL.md) | Orquestrador completo para migração sequencial e coordenada de um módulo inteiro do FormDin 4 para o Adianti. | Ao realizar uma migração de ponta a ponta. |
+| [**formdin-migration-constantes**](skills/formdin-migration-constantes/SKILL.md) | Guia completo para migrar constantes legadas (includes/constantes.php) do FormDin4 para a classe centralizada Constantes.class.php no Adianti. | Ao migrar constantes globais e de negócio do sistema legado. |
+| [**formdin-migration-controller**](skills/formdin-migration-controller/SKILL.md) | Guia técnico para migração de controllers e regras de negócio de FormDin4 para Adianti. | Ao migrar lógica de negócio (controllers legadas). |
+| [**formdin-migration-dao-model**](skills/formdin-migration-dao-model/SKILL.md) | Guia para migrar VOs, DAOs e Stored Procedures de FormDin4 para TRecord e PDO no Adianti. | Ao converter classes DAO/VO da persistência legada. |
+| [**formdin-migration-menu**](skills/formdin-migration-menu/SKILL.md) | Guia para migração de menus legados (TMenuDhtmlx) do FormDin4 para o padrão de menu dinâmico no Adianti (MPDFT) usando TFormDinMenuBuilder. | Ao migrar o menu de navegação do sistema legado. |
+| [**formdin-migration-servidorconfig**](skills/formdin-migration-servidorconfig/SKILL.md) | Guia de migração e criação da classe ServidorConfig de FormDin4 para o Adianti. | Ao migrar o arquivo de configuração de servidores legados. |
+| [**formdin-migration-view**](skills/formdin-migration-view/SKILL.md) | Guia de de-para para conversão de telas legadas (TForm/TGrid) para Adianti Views (TPage/Datagrid). | Ao reescrever telas e formulários (modulos legados). |
+
 
 ## 🔄 Workflows Locais (`.agent/workflows/`)
 
