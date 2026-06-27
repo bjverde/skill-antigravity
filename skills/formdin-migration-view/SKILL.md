@@ -92,16 +92,21 @@ class DetalharOrgaoView extends TPage
         $this->form = new BootstrapFormBuilder('form_DetalhesOrgao');
         $this->form->setFormTitle("Detalhes da Unidade");
 
-        // Campos do Formulário (Somente Leitura)
+        // Campos do Formulário (Somente Leitura) - Siga a skill adianti-form-field-style
         $icodigo = new THidden('ICODIGO');
+        
         $ssigla = new TEntry('SSIGLA');
         $ssigla->setEditable(false);
+        
         $snome = new TEntry('SNOME');
         $snome->setEditable(false);
+        
         $semail = new TEntry('SEMAIL');
         $semail->setEditable(false);
+        
         $sendereco = new TEntry('SENDERECO');
         $sendereco->setEditable(false);
+        
         $tatribuicao = new TText('TATRIBUICAO');
         $tatribuicao->setEditable(false);
 
@@ -196,6 +201,7 @@ class DetalharOrgaoView extends TPage
 ## 🏁 Checklist de Conversão de Views
 - [ ] A view foi convertida em uma classe que estende `TPage` (ou `TWindow` se for popup)?
 - [ ] Os campos legados foram remapeados conforme a tabela De/Para de inputs?
+- [ ] Os novos campos do formulário foram declarados seguindo o estilo da skill **`adianti-form-field-style`**?
 - [ ] Componentes de Datagrid estão usando `BootstrapDatagridWrapper` para renderização elegante?
 - [ ] Todas as colunas visíveis possuem ordenação e transformers de formatação apropriados?
 - [ ] A lógica de navegação foi removida de scripts legados e implementada via `TAction` e métodos da classe?

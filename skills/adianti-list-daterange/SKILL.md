@@ -23,16 +23,18 @@ Para cada campo de data (ex: `dt_include`), criar dois objetos:
 
 ```php
 $dt_include_de = new TDate('dt_include_de');
-$dt_include_ate = new TDate('dt_include_ate');
-
 $dt_include_de->setMask('dd/mm/yyyy');
 $dt_include_de->setDatabaseMask('yyyy-mm-dd');
 $dt_include_de->setSize('100%');
 
+$dt_include_ate = new TDate('dt_include_ate');
 $dt_include_ate->setMask('dd/mm/yyyy');
 $dt_include_ate->setDatabaseMask('yyyy-mm-dd');
 $dt_include_ate->setSize('100%');
 ```
+
+> [!NOTE]
+> Siga sempre a skill **adianti-form-field-style** na organização e declaração destes campos.
 
 ### 2. Layout do Formulário
 Agrupar os campos de intervalo em linhas do `BootstrapFormBuilder`:
