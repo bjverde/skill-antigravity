@@ -19,8 +19,9 @@ Esta skill fornece diretrizes e templates para a criação de telas de consulta 
     - **Texto/Geral**: `TEntry`
     - **Chaves Estrangeiras (FK)**: `TDBCombo`
     - **Datas**: `TDate` ou `TDateTime`. Para filtros em telas `List.php`, utilize obrigatoriamente o padrão de intervalo (De/Até) da skill **`adianti-list-daterange`**.
+- **Configuração de Campos**: Na declaração e configuração dos campos de formulários e filtros, obedeça rigorosamente a skill **`adianti-form-field-style`**, garantindo que todas as configurações de um campo fiquem agrupadas junto à sua instância.
 - **Colunas da Grid**: Para a criação de colunas no Datagrid, utilize obrigatoriamente as definições de ordenação e formatação da skill **`adianti-list-column`**.
-- **Validação de Obrigatoriedade**: Sempre verificar se o campo no banco de dados é `NOT NULL`. Se for, aplicar `$field->addValidation("Label", new TRequiredValidator());`.
+- **Validação de Obrigatoriedade**: Sempre verificar se o campo no banco de dados é `NOT NULL`. Se for, aplicar `$field->addValidation("Label", new TRequiredValidator());` junto da criação do campo.
 - **Metadados de Registro**: Incluir obrigatoriamente os arquivos `include_info_registro_*.php` para manter a rastreabilidade (usuário de criação/alteração e datas).
 
 ---
@@ -135,13 +136,19 @@ class <Nome>Form extends TPage
         $pk = new TEntry(self::$primaryKey);
         $pk->setEditable(false);
 
-        // --- DEFINIÇÃO DOS CAMPOS ---
-        // Texto: $nome = new TEntry('nome');
-        // FK: $fk_id = new TDBCombo('fk_id', self::$database, 'TargetModel', 'id', '{name}');
-        // Data: $data = new TDate('data');
-        
-        // --- VALIDAÇÃO ---
-        // Se NOT NULL no banco: $nome->addValidation("Nome", new TRequiredValidator());
+        // --- DEFINIÇÃO E CONFIGURAÇÃO DOS CAMPOS (Siga a skill adianti-form-field-style) ---
+        // Exemplo:
+        // $nome = new TEntry('nome');
+        // $nome->addValidation("Nome", new TRequiredValidator()); // Se for NOT NULL no banco
+        // $nome->setSize('100%');
+        // 
+        // $fk_id = new TDBCombo('fk_id', self::$database, 'TargetModel', 'id', '{name}');
+        // $fk_id->setSize('100%');
+        // 
+        // $data = new TDate('data');
+        // $data->setMask('dd/mm/yyyy');
+        // $data->setDatabaseMask('yyyy-mm-dd');
+        // $data->setSize('100%');
 
         // --- ADICIONAR AO FORM ---
         // $this->form->addFields([new TLabel("ID:")], [$pk]);
