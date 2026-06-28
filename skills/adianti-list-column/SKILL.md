@@ -25,14 +25,14 @@ $column_<field>->setAction($order_<field>);
 ### 2. Formatação de Datas e Data/Hora
 Campos que representam datas ou carimbos de data/hora (ex: `dt_include`, `created_at`, `updated_at`, `data_nascimento`) devem ser formatados para o padrão brasileiro usando `setTransformer`.
 
-- **Data e Hora**: Usar `Constantes::formatDateTimeBr($value)`
-- **Apenas Data**: Usar `Constantes::formatDateBr($value)`
+- **Data e Hora**: Usar `TFormDinGridTransformer::gridDateTime($value, $object, $row)`
+- **Apenas Data**: Usar `TFormDinGridTransformer::gridDate($value, $object, $row)`
 
 **Exemplo (Data e Hora):**
 ```php
 $column_dt_include = new TDataGridColumn('dt_include', "Inclusão", 'left');
 $column_dt_include->setTransformer(function($value, $object, $row) {
-    return Constantes::formatDateTimeBr($value);
+    return TFormDinGridTransformer::gridDateTime($value, $object, $row);
 });
 ```
 
@@ -58,7 +58,7 @@ $column_name->setAction($order_name);
 // Coluna Data (Ordenável + Formatada)
 $column_created_at = new TDataGridColumn('created_at', "Criado em", 'left');
 $column_created_at->setTransformer(function($value, $object, $row) {
-    return Constantes::formatDateTimeBr($value);
+    return TFormDinGridTransformer::gridDateTime($value, $object, $row);
 });
 $order_created_at = new TAction([$this, 'onReload']);
 $order_created_at->setParameter('order', 'created_at');
