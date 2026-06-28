@@ -68,10 +68,15 @@ class <Nome>List extends TPage
         $this->form->addAction("Cadastrar", new TAction(['<Nome>Form', 'onEdit']), 'fas:plus #69aa46');
         $this->form->addAction("Limpar", new TAction([$this, 'onClear']), Constantes::BTN_CLEAR);
 
-        // Datagrid
-        $this->datagrid = new BootstrapDatagridWrapper(new TDataGrid);
+        // creates a Datagrid
+        $this->datagrid = new TDataGrid;
         $this->datagrid->setId(__CLASS__.'_datagrid');
+
+        $this->filter_criteria = new TCriteria;
+        $this->datagrid = new BootstrapDatagridWrapper($this->datagrid);
         $this->datagrid->datatable = 'true';
+        $this->datagrid->style = 'width: 100%';
+        $this->datagrid->disableDefaultClick();
         $this->datagrid->setHeight(Constantes::GRID_HEIGHT);
 
         // Colunas (Seguir padrões da skill adianti-list-column)
@@ -107,7 +112,11 @@ class <Nome>List extends TPage
         parent::add($container);
     }
 
-    // Métodos obrigatórios: onSearch, onReload, onDelete, onClear, show, manageRow
+    public function onClear($param){
+        TFormDinGridColumn::clearListFilter($this, __CLASS__);
+    }    
+
+    // Métodos obrigatórios: onSearch, onReload, onDelete, onShow, show, manageRow
     // Implementar lógica de filtros em onSearch mapeando os campos do form.
     // Incluir 'include_info_registro_search.php' dentro de onSearch.
 }
