@@ -47,6 +47,15 @@ Para manter a consistência, ao configurar um campo, siga preferencialmente a or
 7. Tamanho do Componente (`setSize`)
 8. Eventos e Ações (`setChangeAction`, `setExitAction`, `enableSearch`, `setEditable`)
 
+### 🏷️ Rótulos (Labels) no Padrão FormDin
+Ao adicionar os campos ao formulário (ex: `$this->form->addFields(...)`), utilize a classe `TFormDinLabelField::getObjTLabel` em vez de `new TLabel`.
+O segundo parâmetro indica se o campo é obrigatório (`true`) ou opcional (`false`).
+
+```php
+// Correto no padrão FormDin
+$row = $this->form->addFields([TFormDinLabelField::getObjTLabel("Nome", true), $nome]);
+```
+
 ---
 
 ## 2. Padrão Adianti (⚠️ APENAS SOB DEMANDA EXPLÍCITA)
@@ -77,6 +86,14 @@ Agrupe as operações por tipo de configuração:
         $nome->setSize('100%');
         $sigla->setSize('100%');
         $codigo_ibge->setSize('100%');
+```
+
+### 🏷️ Rótulos (Labels) no Padrão Adianti
+Ao adicionar os campos ao formulário, utilize a classe padrão do framework `new TLabel`.
+
+```php
+// Correto no padrão Adianti
+$row = $this->form->addFields([new TLabel("Nome", null, '14px', null, '100%'), $nome]);
 ```
 
 ---
